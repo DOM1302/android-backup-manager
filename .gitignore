@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Sauvegardes Android et données privées
+backups/
+data/
+reports/
+logs/
+*.log
+*.csv
+*.db
+*.sqlite
+*.sha256
+*.zip
+
+# Fichiers temporaires
+*.tmp
+*.bak
+
+# IDE
+.idea/
+.vscode/
