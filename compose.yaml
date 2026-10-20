@@ -1,0 +1,24 @@
+
+services:
+  android-backup:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: android-backup-manager:dev
+    container_name: android-backup-manager
+
+    # Utilisation du réseau de Debian
+    network_mode: host
+
+    stdin_open: true
+    tty: true
+
+    volumes:
+      - ${BACKUP_PATH:?BACKUP_PATH requis}:/backups
+
+    environment:
+      BACKUP_ROOT: /backups
+      ADB_SERVER_SOCKET: tcp:127.0.0.1:5037
+
+    restart: "no"
